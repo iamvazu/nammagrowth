@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import JsonLd from "@/components/JsonLd";
-import { Bot, TrendingUp, Search, Code, Smartphone, MapPin } from "lucide-react";
+import LeadForm from "@/components/LeadForm";
+import { Bot, TrendingUp, Search, Code, Smartphone, MapPin, Mail, Phone } from "lucide-react";
 
 export default function Home() {
   const organizationSchema = {
@@ -134,6 +135,48 @@ export default function Home() {
 
             <div className="lg:w-1/2 w-full aspect-video rounded-3xl glass-dark flex items-center justify-center">
               <span className="text-slate-500 font-mono">[Interactive Bangalore Growth Map]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact & Lead Capture Section */}
+      <section id="contact" className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                Ready to <span className="text-gradient">Scale?</span>
+              </h2>
+              <p className="text-slate-400 text-lg mb-12">
+                Book a free 30-minute growth audit. Our experts will analyze your current performance
+                and provide a roadmap for AI-driven expansion.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl glass-dark flex items-center justify-center text-brand-indigo">
+                    <Mail />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-slate-500 uppercase">Email Us</div>
+                    <div className="text-lg font-medium">growth@nammagrowth.in</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl glass-dark flex items-center justify-center text-brand-orange">
+                    <Phone />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-slate-500 uppercase">Call Us</div>
+                    <div className="text-lg font-medium">+91 80 XXXX XXXX</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:w-1/2">
+              <LeadForm />
             </div>
           </div>
         </div>

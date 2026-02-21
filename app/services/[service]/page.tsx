@@ -14,16 +14,34 @@ type Props = {
 
 // Map URL aliases to core service IDs
 const aliasMap: Record<string, string> = {
+    // AI Services
     "ai-content": "ai-seo",
-    "ai-automation": "ai-automation",
+    "whatsapp-automation": "ai-automation",
+    "analytics": "predictive-analytics",
+    "predictive-intelligence": "predictive-analytics",
+
+    // Performance Ads
     "social-ads": "meta-ads",
-    "linkedin-ads": "linkedin-ads",
-    "programmatic-ads": "pseo",
+    "programmatic-ads": "google-ads",
+    "search-ads": "google-ads",
+
+    // Organic Growth
+    "local-seo": "seo",
     "content-marketing": "content-strategy",
     "social-media": "content-strategy",
-    "web-dev": "web-dev",
+    "pseo-engine": "pseo",
+    "organic-seo": "seo",
+
+    // Web & Creative
+    "web-development": "web-dev",
     "video": "video-ads",
-    "pr": "pr"
+    "ecommerce-solutions": "ecommerce",
+    "cro-optimization": "cro",
+
+    // Strategy
+    "automation-hub": "automation",
+    "data-intelligence": "analytics",
+    "digital-pr": "pr"
 };
 
 export async function generateMetadata({ params }: Props) {
@@ -40,9 +58,14 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-    return allServices.map((s) => ({
+    // Include both core IDs and all aliases in pre-rendering
+    const coreParams = allServices.map((s) => ({
         service: s.id,
     }));
+    const aliasParams = Object.keys(aliasMap).map((a) => ({
+        service: a,
+    }));
+    return [...coreParams, ...aliasParams];
 }
 
 export default async function ServiceDetailPage({ params }: Props) {

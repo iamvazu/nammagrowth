@@ -53,7 +53,7 @@ export default function Home() {
     },
     {
       title: "Organic Growth",
-      slug: "pseo",
+      slug: "seo",
       desc: "SEO, PSEO, and content that ranks #1 and drives organic revenue.",
       cta_text: "Explore SEO",
       icon: Search,
@@ -62,7 +62,7 @@ export default function Home() {
     },
     {
       title: "Web & App Development",
-      slug: "web-development",
+      slug: "web-dev",
       desc: "Next.js websites, e-commerce, and mobile apps that convert.",
       cta_text: "See Development",
       icon: Code,
@@ -71,7 +71,7 @@ export default function Home() {
     },
     {
       title: "Creative & Brand",
-      slug: "web-development",
+      slug: "brand-strategy",
       desc: "Video production, design, and influencer marketing at scale.",
       cta_text: "Explore Creative",
       icon: Smartphone,
@@ -80,7 +80,7 @@ export default function Home() {
     },
     {
       title: "Strategy & Analytics",
-      slug: "ai-seo",
+      slug: "automation",
       desc: "Marketing automation, analytics, and data-driven decision making.",
       cta_text: "See Strategy",
       icon: TrendingUp,

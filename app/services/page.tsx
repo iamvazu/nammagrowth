@@ -1,183 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Zap, TrendingUp, Search, MapPin, Code, Smartphone, ChevronRight, CheckCircle2, Layout, Video, Target, BarChart3, Users, Globe, Headset } from "lucide-react";
+import { ChevronRight, Zap, Globe, TrendingUp, Smartphone } from "lucide-react";
 import Link from "next/link";
+import { serviceCategories } from "@/lib/services";
 
 export const metadata = {
     title: "Digital Marketing Services India | AI Marketing, SEO, Automation | Namma Growth",
     description: "Full-stack AI marketing services for Indian businesses. WhatsApp automation, PSEO, Google Ads, web development. Custom strategies for India + global markets. Get free consultation."
 };
-
-const serviceCategories = [
-    {
-        title: "AI-Powered Marketing",
-        desc: "Leverage artificial intelligence to automate, optimize, and scale your marketing efforts beyond human capacity.",
-        price: "From ₹35,000/month",
-        services: [
-            {
-                id: "ai-seo",
-                name: "AI SEO & AEO",
-                desc: "Rank #1 with AI-optimized content and answer engine optimization. ChatGPT visibility and Position 0 targeting.",
-                icon: Smartphone,
-                color: "text-brand-gold"
-            },
-            {
-                id: "ai-automation",
-                name: "Conversational AI",
-                desc: "24/7 customer engagement via WhatsApp, Instagram, and web chat. GPT-4 bots with UPI integration.",
-                icon: Zap,
-                color: "text-green-500"
-            },
-            {
-                id: "predictive-analytics",
-                name: "Predictive Intelligence",
-                desc: "Predict customer behavior, churn, and LTV forecasting before your competitors do.",
-                icon: TrendingUp,
-                color: "text-brand-orange"
-            }
-        ]
-    },
-    {
-        title: "Performance Marketing",
-        desc: "Data-driven advertising across Google, Meta, and LinkedIn with AI-optimized bidding.",
-        price: "From ₹50,000/month",
-        services: [
-            {
-                id: "google-ads",
-                name: "Google Ads Mastery",
-                desc: "Search, Display, YouTube, and Performance Max. ROI-focused smart bidding.",
-                icon: Target,
-                color: "text-brand-indigo"
-            },
-            {
-                id: "meta-ads",
-                name: "Meta Ads (FB/IG)",
-                desc: "Reels-first strategy, vernacular creatives, and WhatsApp click-to-chat campaigns.",
-                icon: Layout,
-                color: "text-blue-500"
-            },
-            {
-                id: "linkedin-ads",
-                name: "LinkedIn B2B",
-                desc: "Precision targeting for decision-makers. ABM and lead generation for startups & enterprises.",
-                icon: BarChart3,
-                color: "text-brand-indigo"
-            }
-        ]
-    },
-    {
-        title: "Organic Growth",
-        desc: "Dominate search results and build sustainable organic traffic through SEO and PSEO.",
-        price: "From ₹30,000/month",
-        services: [
-            {
-                id: "seo",
-                name: "Advanced SEO",
-                desc: "Technical excellence and on-page mastery. Google.co.in and international optimization.",
-                icon: Search,
-                color: "text-brand-indigo"
-            },
-            {
-                id: "pseo",
-                name: "Programmatic SEO",
-                desc: "Scale to 100s of ranking pages (Service × Location) with AI-powered content.",
-                icon: Globe,
-                color: "text-brand-orange"
-            },
-            {
-                id: "content-strategy",
-                name: "Content Marketing",
-                desc: "Hinglish and vernacular content that resonates with the Indian heart.",
-                icon: Video,
-                color: "text-brand-gold"
-            }
-        ]
-    },
-    {
-        title: "Web & App",
-        desc: "High-performance websites and apps built for conversion, speed, and scale.",
-        price: "From ₹75,000",
-        services: [
-            {
-                id: "web-dev",
-                name: "Next.js Web Dev",
-                desc: "Next.js websites that load instantly. 2G/3G optimized with regional hosting.",
-                icon: Code,
-                color: "text-purple-500"
-            },
-            {
-                id: "ecommerce",
-                name: "E-commerce Engine",
-                desc: "Shopify & custom stores with UPI, COD, and GST invoicing built-in.",
-                icon: Smartphone,
-                color: "text-brand-gold"
-            },
-            {
-                id: "cro",
-                name: "CRO Optimization",
-                desc: "A/B testing and funnel analysis to turn more visitors into customers.",
-                icon: Zap,
-                color: "text-brand-orange"
-            }
-        ]
-    },
-    {
-        title: "Creative & Brand",
-        desc: "Stand out with compelling video, design, and influencer partnerships.",
-        price: "From ₹25,000",
-        services: [
-            {
-                id: "brand-strategy",
-                name: "Brand Identity",
-                desc: "Cultural symbolism and vernacular naming for the Indian market.",
-                icon: Users,
-                color: "text-pink-500"
-            },
-            {
-                id: "video-ads",
-                name: "Video ROI",
-                desc: "High-converting Reels, Shorts, and explainer videos for ads and social.",
-                icon: Video,
-                color: "text-brand-indigo"
-            },
-            {
-                id: "influencer",
-                name: "Influencer Scale",
-                desc: "Leverage regional nano and micro-influencers for authentic reach.",
-                icon: Target,
-                color: "text-brand-gold"
-            }
-        ]
-    },
-    {
-        title: "Strategy & Strategy",
-        desc: "Predictive decision-making with marketing automation and analytics.",
-        price: "From ₹40,000/month",
-        services: [
-            {
-                id: "automation",
-                name: "Automation Hub",
-                desc: "WhatsApp-first nurture flows and CRM integration at scale.",
-                icon: Zap,
-                color: "text-green-500"
-            },
-            {
-                id: "analytics",
-                name: "Data Intelligence",
-                desc: "Online-offline attribution and predictive LTV dashboards.",
-                icon: TrendingUp,
-                color: "text-brand-orange"
-            },
-            {
-                id: "pr",
-                name: "Digital PR",
-                desc: "Brand authority building across YourStory, Inc42, and global pubs.",
-                icon: Headset,
-                color: "text-brand-indigo"
-            }
-        ]
-    }
-];
 
 const faqs = [
     {
@@ -200,7 +30,7 @@ const faqs = [
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen bg-bg-deep">
+        <main className="min-h-screen bg-bg-deep uppercase-none">
             <Navbar />
 
             {/* Hero */}

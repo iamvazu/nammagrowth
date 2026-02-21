@@ -20,12 +20,44 @@ export default function Navbar() {
         {
             name: 'Services',
             href: '/services',
-            dropdown: [
-                { name: 'AI WhatsApp Automation', href: '/services/whatsapp-automation' },
-                { name: 'Google & Meta Ads', href: '/services/performance-marketing' },
-                { name: 'Local SEO', href: '/services/local-seo' },
-                { name: 'Programmatic SEO', href: '/services/pseo' },
-                { name: 'Web Development', href: '/services/web-development' },
+            isMega: true,
+            categories: [
+                {
+                    title: "AI-Powered Marketing",
+                    links: [
+                        { name: "AI SEO & AEO", href: "/services/ai-seo" },
+                        { name: "AI Content Generation", href: "/services/ai-content" },
+                        { name: "WhatsApp Automation", href: "/services/whatsapp-automation" },
+                        { name: "Predictive Analytics", href: "/services/analytics" }
+                    ]
+                },
+                {
+                    title: "Performance Ads",
+                    links: [
+                        { name: "Google & Search Ads", href: "/services/google-ads" },
+                        { name: "Meta & Social Ads", href: "/services/social-ads" },
+                        { name: "LinkedIn B2B", href: "/services/linkedin-ads" },
+                        { name: "Programmatic Ads", href: "/services/programmatic-ads" }
+                    ]
+                },
+                {
+                    title: "Organic Growth",
+                    links: [
+                        { name: "PSEO Engine", href: "/services/pseo" },
+                        { name: "Local SEO Mastery", href: "/services/local-seo" },
+                        { name: "Content Strategy", href: "/services/content-marketing" },
+                        { name: "Social Management", href: "/services/social-media" }
+                    ]
+                },
+                {
+                    title: "Web & Creative",
+                    links: [
+                        { name: "Web Development", href: "/services/web-development" },
+                        { name: "E-commerce Solutions", href: "/services/ecommerce" },
+                        { name: "Video Production", href: "/services/video" },
+                        { name: "CRO Optimization", href: "/services/cro" }
+                    ]
+                }
             ]
         },
         {
@@ -70,9 +102,10 @@ export default function Navbar() {
                                     className="flex items-center gap-1 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
                                 >
                                     {link.name}
-                                    {link.dropdown && <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
+                                    {(link.dropdown || link.categories) && <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
                                 </Link>
 
+                                {/* Regular Dropdown */}
                                 {link.dropdown && (
                                     <AnimatePresence>
                                         {activeDropdown === link.name && (
@@ -83,7 +116,7 @@ export default function Navbar() {
                                                 className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 glass-dark p-4 rounded-3xl border border-white/10 shadow-2xl"
                                             >
                                                 <div className="flex flex-col gap-1">
-                                                    {link.dropdown.map((item) => (
+                                                    {link.dropdown.map((item: any) => (
                                                         <Link
                                                             key={item.name}
                                                             href={item.href}
@@ -93,6 +126,40 @@ export default function Navbar() {
                                                         </Link>
                                                     ))}
                                                 </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                )}
+
+                                {/* Mega Menu */}
+                                {link.categories && (
+                                    <AnimatePresence>
+                                        {activeDropdown === link.name && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] glass-dark p-8 rounded-[2.5rem] border border-white/10 shadow-2xl overflow-hidden"
+                                            >
+                                                <div className="grid grid-cols-4 gap-8 relative z-10">
+                                                    {link.categories.map((cat: any) => (
+                                                        <div key={cat.title}>
+                                                            <h5 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-orange mb-4">{cat.title}</h5>
+                                                            <div className="flex flex-col gap-3">
+                                                                {cat.links.map((item: any) => (
+                                                                    <Link
+                                                                        key={item.name}
+                                                                        href={item.href}
+                                                                        className="text-sm text-slate-400 hover:text-white transition-colors"
+                                                                    >
+                                                                        {item.name}
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-indigo/10 blur-3xl rounded-full" />
                                             </motion.div>
                                         )}
                                     </AnimatePresence>

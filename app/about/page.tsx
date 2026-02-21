@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { User, Target, MapPin, Award } from "lucide-react";
-import Link from "next/link";
+import { Target, MapPin, Award } from "lucide-react";
 
 export const metadata = {
     title: "About Namma Growth | The AI-First Marketing Agency for Bangalore",
@@ -18,13 +17,13 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl">
                         <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter">
-                            Born in <span className="text-brand-orange">Koramangala</span> <br />
-                            Built for <span className="italic">Results</span>
+                            Silicon Valley <span className="text-brand-indigo">AI.</span> <br />
+                            Indian <span className="text-brand-orange italic">Heart.</span>
                         </h1>
                         <p className="text-slate-400 text-2xl leading-relaxed max-w-3xl">
-                            Namma Growth was founded with a single obsession: Bangalore&apos;s
-                            ambitious startups and SMEs are being underserved by traditional
-                            jargon-heavy agencies. We replaced the jargon with AI.
+                            Namma Growth is India&apos;s first AI-native marketing agency.
+                            We combine global LLM technology with deep local expertise
+                            to scale businesses from Koramangala to the world.
                         </p>
                     </div>
                 </div>
@@ -42,8 +41,8 @@ export default function AboutPage() {
                                         <Target className="w-8 h-8" />
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold mb-2">Aggressive ROI focus</h4>
-                                        <p className="text-slate-500 italic leading-relaxed">We don&apos;t care about &apos;brand awareness&apos; if it doesn&apos;t lead to revenue. Every rupee you spend with us must work harder than it does on its own.</p>
+                                        <h4 className="text-xl font-bold mb-2">WhatsApp-First Strategy</h4>
+                                        <p className="text-slate-500 italic leading-relaxed">In India, marketing happens on WhatsApp, not email. We build UPI-integrated bots that handle everything from discovery to payment.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-6 group">
@@ -51,8 +50,8 @@ export default function AboutPage() {
                                         <MapPin className="w-8 h-8" />
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold mb-2">Hyper-Local Intelligence</h4>
-                                        <p className="text-slate-500 italic leading-relaxed">We know why a SaaS founder in Koramangala buys differently than a real estate developer in Whitefield. Locality is our strategy.</p>
+                                        <h4 className="text-xl font-bold mb-2">Vernacular Mastery</h4>
+                                        <p className="text-slate-500 italic leading-relaxed">We optimize for Bharat. Our AI handles Hinglish, Kannada, Tamil, and more, ensuring your brand speaks the language of your customer.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-6 group">
@@ -60,8 +59,8 @@ export default function AboutPage() {
                                         <Award className="w-8 h-8" />
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold mb-2">AI-Execution</h4>
-                                        <p className="text-slate-500 italic leading-relaxed">Our proprietary AI engine handles the grunt work—reporting, tracking, and content at scale—allowing our humans to focus on strategy.</p>
+                                        <h4 className="text-xl font-bold mb-2">Predictive Execution</h4>
+                                        <p className="text-slate-500 italic leading-relaxed">Our AI doesn&apos;t just generate content; it predicts which creatives will convert best in specific micro-markets like HSR or Whitefield.</p>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +86,6 @@ export default function AboutPage() {
                     </p>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto opacity-50">
-                        {/* Values Icons */}
                         {["Integrity", "Innovation", "Speed", "Results"].map(v => (
                             <div key={v} className="text-center">
                                 <div className="text-white font-black uppercase tracking-widest text-xs">{v}</div>

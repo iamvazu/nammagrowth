@@ -10,50 +10,67 @@ export const metadata = {
 
 const tiers = [
     {
-        name: "Growth Starter",
+        name: "Startup Engine",
         price: "₹25,000",
         period: "/month",
-        desc: "Perfect for local SMEs and clinics looking to dominate their neighborhood.",
+        desc: "Built for pre-seed founders and neighborhood businesses.",
         features: [
-            "Local SEO (1 Location)",
+            "Local SEO (1 Neighborhood)",
             "Google Business Optimization",
-            "WhatsApp Business Setup",
-            "Lead Capture Form",
-            "Monthly Growth Report"
+            "Basic WhatsApp Business Setup",
+            "Lead Capture System",
+            "Essential Social Media Presence"
         ],
-        cta: "Start Local Growth",
+        cta: "Start My Engine",
         color: "border-white/5"
     },
     {
-        name: "Scale Engine",
+        name: "Growth Engine",
         price: "₹75,000",
         period: "/month",
-        desc: "Designed for high-growth startups and established Bangalore brands.",
+        desc: "Scaling seed-stage startups and aggressive SMBs.",
         features: [
-            "Performance Ads (Meta & Google)",
-            "Full WhatsApp AI Automation",
-            "PSEO Hub (50+ Pages)",
+            "Full Performance Ads (Meta/Google)",
+            "Nationwide SEO & Content",
+            "WhatsApp AI Automation",
             "Conversion Rate Optimization",
-            "Priority WhatsApp Support",
-            "Dedicated Growth Manager"
+            "Dedicated Social Management",
+            "Monthly Strategic Audit"
         ],
-        cta: "Fuel Your Growth",
+        cta: "Scale My Brand",
         color: "border-brand-indigo",
         featured: true
     },
     {
-        name: "Enterprise Domination",
-        price: "Custom",
-        period: "",
-        desc: "Multi-location, multi-service strategy for large-scale market leadership.",
+        name: "Scale Engine",
+        price: "₹1,50,000",
+        period: "/month",
+        desc: "Market leadership for Series B+ and mid-market firms.",
         features: [
+            "Full-Stack Marketing Team",
             "Custom PSEO Infrastructure",
+            "High-End Video Production",
             "Advanced AI Agent Integration",
-            "Enterprise ABM Strategies",
-            "National Expansion Mapping",
-            "24/7 Strategic Partnership"
+            "Predictive Growth Analytics",
+            "Global Market Expansion Map"
         ],
-        cta: "Contact for Custom Plan",
+        cta: "Dominate Market",
+        color: "border-brand-orange"
+    },
+    {
+        name: "Enterprise Engine",
+        price: "₹5,00,000+",
+        period: "/month",
+        desc: "Custom-built solutions for MNCs and conglomerates.",
+        features: [
+            "White-Glove 24/7 Managed Team",
+            "Multi-City Vernacular Strategy",
+            "Custom Marketing Software Dev",
+            "Crisis Management & PR",
+            "M&A Growth Consulting",
+            "Global Scaling Infrastructure"
+        ],
+        cta: "Custom Consultation",
         color: "border-white/5"
     }
 ];
@@ -79,11 +96,11 @@ export default function PricingPage() {
             {/* Pricing Grid */}
             <section className="py-32">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {tiers.map((tier) => (
                             <div
                                 key={tier.name}
-                                className={`glass-dark p-10 rounded-[3rem] border-2 ${tier.color} transition-all relative flex flex-col h-full ${tier.featured ? 'scale-105 shadow-2xl shadow-brand-indigo/10' : ''}`}
+                                className={`glass-dark p-8 rounded-[3rem] border-2 ${tier.color} transition-all relative flex flex-col h-full ${tier.featured ? 'scale-105 shadow-2xl shadow-brand-indigo/10 z-10' : ''}`}
                             >
                                 {tier.featured && (
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-indigo px-6 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white">

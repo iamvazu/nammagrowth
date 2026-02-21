@@ -28,10 +28,10 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 tracing-tight"
+                    className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-8 tracking-tighter"
                 >
-                    Scale Your <span className="text-gradient">Business</span> <br />
-                    with <span className="italic">AI Precision</span>
+                    Scale Your <span className="text-brand-orange">Bangalore Business</span> <br />
+                    with <span className="italic">AI Marketing</span>
                 </motion.h1>
 
                 <motion.p
@@ -40,8 +40,8 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12"
                 >
-                    From Koramangala startups to Indiranagar enterprises, we build autonomous
-                    revenue engines using Programmatic SEO, AEO, and AI Automation.
+                    From Koramangala startups to Whitefield enterprises — we build
+                    automated revenue engines that actually work.
                 </motion.p>
 
                 <motion.div
@@ -51,12 +51,12 @@ export default function Hero() {
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
                     <button className="btn-premium group">
-                        Get Free Growth Audit
+                        Get Free Growth Audit (₹15,000 Value)
                         <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" />
                     </button>
 
                     <button className="px-8 py-4 rounded-full font-bold glass hover:bg-white/20 transition-all border border-white/10">
-                        View Success Stories
+                        See Client Results
                     </button>
                 </motion.div>
 
@@ -65,17 +65,17 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1 }}
-                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
                 >
                     {[
-                        { label: 'ROI Improvement', value: '300%' },
-                        { label: 'Growth Trajectory', value: '10X' },
-                        { label: 'AI Models', value: '50+' },
-                        { label: 'Bangalore Clients', value: '100+' },
+                        { label: 'Avg ROI — Within 90 Days', value: '300%' },
+                        { label: 'Revenue Generated for Clients', value: '₹10Cr+' },
+                        { label: 'Scaled in Bangalore', value: '50+' },
+                        { label: 'AI Automation Inquiries', value: '24/7' },
                     ].map((stat, i) => (
-                        <div key={i} className="text-center">
-                            <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                            <div className="text-xs text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                        <div key={i} className="text-center p-6 glass-dark rounded-2xl border border-white/5">
+                            <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                            <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold leading-tight">{stat.label}</div>
                         </div>
                     ))}
                 </motion.div>

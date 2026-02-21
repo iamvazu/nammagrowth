@@ -3,18 +3,14 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, company, industry, budget, message } = body;
+        const { name, email, phone, industry, location, budget, challenge } = body;
 
         // Perfex CRM API Integration
-        // Note: Perfex usually requires a REST API module. 
-        // The endpoint is typically /api/leads
         const CRM_URL = process.env.PERFEX_CRM_URL || 'https://perfexcrm-31a257081d78.herokuapp.com/api/leads';
         const API_KEY = process.env.PERFEX_API_KEY;
 
         if (!API_KEY) {
             console.warn('PERFEX_API_KEY is not set. Lead not synced to CRM.');
-            // For now, we return success so the user sees a thank you message, 
-            // but you should add your API key to Heroku Config Vars.
             return NextResponse.json({ success: true, message: 'Lead captured locally (Testing mode)' });
         }
 
@@ -26,10 +22,10 @@ export async function POST(request: Request) {
             },
             body: JSON.stringify({
                 name: name,
-                title: industry,
-                company: company,
+                title: `${industry} in ${location}`,
                 email: email,
-                description: `Budget: ${budget}. Message: ${message}`,
+                phonenumber: phone,
+                description: `Budget: ${budget}. Biggest Challenge: ${challenge}`,
                 status: 1, // Default status
                 source: 1, // Web source
             }),

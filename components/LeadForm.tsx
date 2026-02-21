@@ -58,6 +58,18 @@ export default function LeadForm() {
                         />
                     </div>
                     <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Phone (WhatsApp)</label>
+                        <input
+                            required
+                            name="phone"
+                            placeholder="+91 98765 43210"
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-indigo transition-colors text-white"
+                        />
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
                         <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Work Email</label>
                         <input
                             required
@@ -67,16 +79,35 @@ export default function LeadForm() {
                             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-indigo transition-colors text-white"
                         />
                     </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Industry</label>
+                        <select
+                            name="industry"
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-indigo transition-colors text-white appearance-none"
+                        >
+                            <option value="saas">SaaS & Tech</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="ecommerce">D2C / E-commerce</option>
+                            <option value="education">Education</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Company</label>
-                        <input
-                            name="company"
-                            placeholder="Namma SaaS"
-                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-indigo transition-colors text-white"
-                        />
+                        <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Location in Bangalore</label>
+                        <select
+                            name="location"
+                            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-indigo transition-colors text-white appearance-none"
+                        >
+                            <option value="koramangala">Koramangala</option>
+                            <option value="hsr">HSR Layout</option>
+                            <option value="indiranagar">Indiranagar</option>
+                            <option value="whitefield">Whitefield</option>
+                            <option value="other">Other / Pan India</option>
+                        </select>
                     </div>
                     <div className="space-y-2">
                         <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Monthly Budget</label>
@@ -92,13 +123,17 @@ export default function LeadForm() {
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">How can we help?</label>
-                    <textarea
-                        name="message"
-                        rows={4}
-                        placeholder="Tell us about your growth goals..."
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-indigo transition-colors text-white resize-none"
-                    />
+                    <label className="text-sm font-bold text-slate-400 uppercase tracking-wider">Biggest Challenge</label>
+                    <select
+                        name="challenge"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-indigo transition-colors text-white appearance-none"
+                    >
+                        <option value="leads">Generating Qualified Leads</option>
+                        <option value="seo">Ranking on Google</option>
+                        <option value="automation">Automating Customer Chat</option>
+                        <option value="ads">Improving Ad ROAS</option>
+                        <option value="branding">Brand Building</option>
+                    </select>
                 </div>
 
                 <button
@@ -107,7 +142,7 @@ export default function LeadForm() {
                 >
                     {status === 'loading' ? 'Processing...' : (
                         <>
-                            Request Free Audit
+                            Get My Free Audit — Response in 2 Hours
                             <Send className="w-4 h-4" />
                         </>
                     )}

@@ -8,6 +8,7 @@ import Link from 'next/link'
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20)
@@ -16,10 +17,29 @@ export default function Navbar() {
     }, [])
 
     const navLinks = [
-        { name: 'Services', href: '#services' },
-        { name: 'Industries', href: '#industries' },
-        { name: 'Case Stories', href: '#cases' },
-        { name: 'Blog', href: '#blog' },
+        {
+            name: 'Services',
+            href: '/services',
+            dropdown: [
+                { name: 'AI WhatsApp Automation', href: '/services/whatsapp-automation' },
+                { name: 'Google & Meta Ads', href: '/services/performance-marketing' },
+                { name: 'Local SEO', href: '/services/local-seo' },
+                { name: 'Programmatic SEO', href: '/services/pseo' },
+                { name: 'Web Development', href: '/services/web-development' },
+            ]
+        },
+        {
+            name: 'Industries',
+            href: '/industries',
+            dropdown: [
+                { name: 'SaaS & Tech', href: '/industries/saas' },
+                { name: 'Real Estate', href: '/industries/real-estate' },
+                { name: 'Healthcare', href: '/industries/healthcare' },
+                { name: 'D2C E-commerce', href: '/industries/ecommerce' },
+            ]
+        },
+        { name: 'Case Stories', href: '/case-studies' },
+        { name: 'Blog', href: '/blog' },
     ]
 
     return (
@@ -28,7 +48,7 @@ export default function Navbar() {
                 <div className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 ${isScrolled ? 'glass-dark' : 'bg-transparent'}`}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center font-bold text-white">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-indigo to-brand-orange flex items-center justify-center font-bold text-white shadow-lg shadow-brand-indigo/20">
                             N
                         </div>
                         <span className="text-xl font-extrabold tracking-tighter text-white">
@@ -39,17 +59,49 @@ export default function Navbar() {
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <Link
+                            <div
                                 key={link.name}
-                                href={link.href}
-                                className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                                className="relative group py-2"
+                                onMouseEnter={() => setActiveDropdown(link.name)}
+                                onMouseLeave={() => setActiveDropdown(null)}
                             >
-                                {link.name}
-                            </Link>
+                                <Link
+                                    href={link.href}
+                                    className="flex items-center gap-1 text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                                >
+                                    {link.name}
+                                    {link.dropdown && <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
+                                </Link>
+
+                                {link.dropdown && (
+                                    <AnimatePresence>
+                                        {activeDropdown === link.name && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 glass-dark p-4 rounded-3xl border border-white/10 shadow-2xl"
+                                            >
+                                                <div className="flex flex-col gap-1">
+                                                    {link.dropdown.map((item) => (
+                                                        <Link
+                                                            key={item.name}
+                                                            href={item.href}
+                                                            className="px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all"
+                                                        >
+                                                            {item.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                )}
+                            </div>
                         ))}
-                        <button className="px-5 py-2 rounded-full glass border border-white/10 text-sm font-bold hover:bg-white/10 transition-all">
+                        <Link href="/book-call" className="px-6 py-2.5 rounded-full glass border border-white/10 text-sm font-bold hover:bg-white/10 transition-all text-white">
                             Book a Call
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Toggle */}
@@ -82,9 +134,13 @@ export default function Navbar() {
                                     {link.name}
                                 </Link>
                             ))}
-                            <button className="btn-premium w-full">
-                                Get Growth Audit
-                            </button>
+                            <Link
+                                href="/book-call"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="btn-premium w-full text-center"
+                            >
+                                Get Free Audit
+                            </Link>
                         </div>
                     </motion.div>
                 )}

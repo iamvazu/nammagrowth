@@ -4,6 +4,7 @@ import JsonLd from "@/components/JsonLd";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 import BangaloreMap from "@/components/BangaloreMap";
+import Link from "next/link";
 import { Bot, TrendingUp, Search, Code, Smartphone, MapPin, Mail, Phone, ArrowRight, Quote } from "lucide-react";
 
 export default function Home() {

@@ -24,8 +24,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function LocationPage({ params }: { params: { slug: string } }) {
-    const data = locationData[params.slug] || { name: params.slug.replace('-', ' ') };
+export default async function LocationPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const data = locationData[slug] || { name: slug.replace('-', ' ') };
 
     return (
         <main className="min-h-screen bg-bg-deep uppercase-none">

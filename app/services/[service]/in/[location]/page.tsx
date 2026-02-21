@@ -15,9 +15,10 @@ export async function generateStaticParams() {
     return paths;
 }
 
-export default function ServiceLocationPage({ params }: { params: { service: string, location: string } }) {
-    const serviceName = params.service.replace('-', ' ').toUpperCase();
-    const locationName = params.location.replace('-', ' ').toUpperCase();
+export default async function ServiceLocationPage({ params }: { params: Promise<{ service: string, location: string }> }) {
+    const { service, location } = await params;
+    const serviceName = service.replace('-', ' ').toUpperCase();
+    const locationName = location.replace('-', ' ').toUpperCase();
 
     return (
         <main className="min-h-screen bg-bg-deep">

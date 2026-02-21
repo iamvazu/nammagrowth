@@ -35,6 +35,7 @@ export default function Home() {
   const services = [
     {
       title: "AI-Powered Marketing",
+      slug: "ai-seo",
       desc: "GPT-4 powered content, predictive analytics, and autonomous campaigns.",
       cta_text: "Explore AI Services",
       icon: Bot,
@@ -43,6 +44,7 @@ export default function Home() {
     },
     {
       title: "Performance Marketing",
+      slug: "google-ads",
       desc: "Google, Meta, LinkedIn ads with AI-optimized bidding and creative.",
       cta_text: "See Ad Services",
       icon: TrendingUp,
@@ -51,6 +53,7 @@ export default function Home() {
     },
     {
       title: "Organic Growth",
+      slug: "pseo",
       desc: "SEO, PSEO, and content that ranks #1 and drives organic revenue.",
       cta_text: "Explore SEO",
       icon: Search,
@@ -59,6 +62,7 @@ export default function Home() {
     },
     {
       title: "Web & App Development",
+      slug: "web-development",
       desc: "Next.js websites, e-commerce, and mobile apps that convert.",
       cta_text: "See Development",
       icon: Code,
@@ -67,6 +71,7 @@ export default function Home() {
     },
     {
       title: "Creative & Brand",
+      slug: "web-development",
       desc: "Video production, design, and influencer marketing at scale.",
       cta_text: "Explore Creative",
       icon: Smartphone,
@@ -75,6 +80,7 @@ export default function Home() {
     },
     {
       title: "Strategy & Analytics",
+      slug: "ai-seo",
       desc: "Marketing automation, analytics, and data-driven decision making.",
       cta_text: "See Strategy",
       icon: TrendingUp,
@@ -158,7 +164,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="mt-auto pt-6 border-t border-white/5">
-                  <Link href={`/services#${service.title.toLowerCase().replace(/ /g, '-')}`} className="flex items-center gap-2 text-xs font-bold text-slate-300 group-hover:text-brand-orange transition-colors">
+                  <Link href={`/services/${service.slug}`} className="flex items-center gap-2 text-xs font-bold text-slate-300 group-hover:text-brand-orange transition-colors">
                     {service.cta_text} <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>

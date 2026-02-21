@@ -244,8 +244,8 @@ export default function ServicesPage() {
                                             <s.icon className={`w-14 h-14 mb-8 ${s.color}`} />
                                             <h4 className="text-2xl font-bold mb-6 text-white leading-tight">{s.name}</h4>
                                             <p className="text-slate-400 text-sm leading-relaxed mb-10 flex-grow">{s.desc}</p>
-                                            <Link href={`/book-call?service=${s.id}`} className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white group-hover:text-brand-orange transition-colors">
-                                                Learn More <ChevronRight className="w-4 h-4" />
+                                            <Link href={`/services/${s.id}`} className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white group-hover:text-brand-orange transition-colors">
+                                                View Details <ChevronRight className="w-4 h-4" />
                                             </Link>
                                         </div>
                                     ))}

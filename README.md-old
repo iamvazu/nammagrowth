@@ -1,0 +1,42 @@
+# Namma Growth - AI Marketing Agency
+
+## Overview
+**Namma Growth** is a premier AI Marketing Agency based in Bangalore, India. We specialize in scaling businesses through cutting-edge AI automation, performance marketing, and programmatic SEO (PSEO) strategies.
+
+Our mission is to dominate the search landscape for AI marketing and Bangalore-specific keywords, providing unprecedented growth for IIM/IIT-led startups and established Indiranagar/Koramangala enterprises.
+
+## Tech Stack
+- **Frontend:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS + shadcn/ui
+- **Animations:** Framer Motion
+- **Infrastructure:** Node.js, Vercel, Supabase
+- **CMS:** Sanity.io
+- **SEO/AEO/GEO:** Integrated Schema.org, Hyper-local PSEO, Speakable Schema
+
+## Repository Structure
+- `/app`: Next.js 14 App Router (Pages, Layouts)
+- `/components`: Reusable UI components
+- `/lib`: Utility functions and shared logic
+- `/public`: Static assets (logos, videos)
+- `/schemas`: Sanity.io content models
+- `PRD.md`: Detailed Product Requirements Document
+
+## Getting Started
+1. Install dependencies: `npm install`
+2. Run development server: `npm run dev`
+3. Build for production: `npm run build`
+
+## Key Strategies
+### 1. Programmatic SEO (PSEO)
+Automated generation of location-specific and industry-specific landing pages (e.g., `/services/seo/in/koramangala`).
+
+### 2. Answer Engine Optimization (AEO)
+Structuring content to win "Position 0" and voice search queries through FAQ schema and direct answer formats.
+
+### 3. Generative Engine Optimization (GEO)
+Optimizing content (E-E-A-T signals, entity relationships) to be cited by AI models like ChatGPT, Perplexity, and Gemini.
+
+## Contact
+- **Office:** WeWork, Prestige Atlanta, Koramangala, Bangalore
+- **Website:** nammagrowth.in
+- **WhatsApp:** Integrated via floating button

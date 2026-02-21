@@ -61,6 +61,15 @@ export default function Navbar() {
             ]
         },
         {
+            name: 'Discovery',
+            href: '#',
+            dropdown: [
+                { name: 'SEO Discovery Form', href: '/discovery/seo' },
+                { name: 'Web Design Discovery Form', href: '/discovery/web-design' },
+                { name: 'Paid Advertising Discovery Form', href: '/discovery/ads' }
+            ]
+        },
+        {
             name: 'Industries',
             href: '/industries',
             dropdown: [

@@ -1,65 +1,150 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import JsonLd from "@/components/JsonLd";
+import { Bot, TrendingUp, Search, Code, Smartphone, MapPin } from "lucide-react";
 
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Namma Growth",
+    "url": "https://nammagrowth.in",
+    "logo": "https://nammagrowth.in/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Koramangala",
+      "addressRegion": "Bangalore",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-80-XXXX-XXXX",
+      "contactType": "sales"
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-bg-deep">
+      <JsonLd data={organizationSchema} />
+      <Navbar />
+      <Hero />
+
+      {/* Trust Section */}
+      <section className="py-20 bg-slate-900/30">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 mb-10">
+            Trusted by Bangalore&apos;s fastest growing companies
           </p>
+          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            {/* These would be real logos */}
+            {["FLIPKART", "SWIGGY", "CRED", "ZEPTO"].map((brand) => (
+              <span key={brand} className="text-2xl font-black text-white">{brand}</span>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services Grid */}
+      <section id="services" className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mb-20 text-balance">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Our <span className="text-brand-indigo">Growth Engine</span> Services
+            </h2>
+            <p className="text-slate-400 text-lg">
+              We don&apos;t just do marketing; we build scalable digital systems
+              powered by the latest AI technologies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "WhatsApp Automation",
+                desc: "Turn WhatsApp into a revenue channel with automated support and campaigns.",
+                icon: Bot,
+                color: "text-green-500"
+              },
+              {
+                title: "Performance Marketing",
+                desc: "High-intent lead generation across Meta, Google, and LinkedIn Ads.",
+                icon: TrendingUp,
+                color: "text-brand-orange"
+              },
+              {
+                title: "PSEO & SEO",
+                desc: "Dominate search results with hyper-local programmatic landing pages.",
+                icon: Search,
+                color: "text-brand-indigo"
+              },
+              {
+                title: "Web & App Dev",
+                desc: "Conversion-optimized platforms built for the Indian mobile-first market.",
+                icon: Code,
+                color: "text-purple-500"
+              },
+              {
+                title: "AEO Optimization",
+                desc: "Optimize for voice search and AI answer engines like ChatGPT.",
+                icon: Smartphone,
+                color: "text-brand-gold"
+              },
+              {
+                title: "Local SEO",
+                desc: "Own your local Bangalore market from Koramangala to Whitefield.",
+                icon: MapPin,
+                color: "text-red-500"
+              }
+            ].map((service, i) => (
+              <div key={i} className="group p-8 rounded-3xl glass-dark hover:bg-slate-800/50 transition-all border border-white/5 hover:border-brand-indigo/30">
+                <service.icon className={`w-12 h-12 mb-6 ${service.color}`} />
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  {service.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Local Proof Section */}
+      <section className="py-32 bg-bg-deep relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                Bengaluru-First <br />
+                <span className="text-brand-orange">Growth Strategy</span>
+              </h2>
+              <p className="text-slate-400 text-lg mb-8">
+                We know the pulse of Bangalore. From the tech hubs of Whitefield to
+                the startup vibes of Koramangala, our strategies are locally tailored
+                to win in India&apos;s tech capital.
+              </p>
+              <ul className="space-y-4">
+                {["Local Language Support (Kannada/Hinglish)", "Mobile-First Optimization", "GST-Integrated Pricing"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-white font-medium">
+                    <div className="w-2 h-2 rounded-full bg-brand-orange" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="lg:w-1/2 w-full aspect-video rounded-3xl glass-dark flex items-center justify-center">
+              <span className="text-slate-500 font-mono">[Interactive Bangalore Growth Map]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer (Simplified for now) */}
+      <footer className="py-20 border-t border-white/5">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-slate-500 mb-4">© 2026 Namma Growth. Built with AI in Bengaluru.</p>
+        </div>
+      </footer>
+    </main>
   );
 }

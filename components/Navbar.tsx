@@ -79,6 +79,7 @@ export default function Navbar() {
                 { name: 'D2C E-commerce', href: '/industries/ecommerce' },
             ]
         },
+        { name: 'AI Agents', href: '/ai-agents' },
         { name: 'Case Stories', href: '/case-studies' },
         { name: 'Blog', href: '/blog' },
     ]

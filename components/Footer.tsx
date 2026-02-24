@@ -25,7 +25,7 @@ export default function Footer() {
                             </span>
                         </Link>
                         <p className="text-slate-400 text-sm leading-relaxed italic max-w-xs">
-                            India's first AI-native marketing agency. Building autonomous revenue engines for the next generation of Indian brands.
+                            Namma Growth is building the autonomous workforce for Indian businesses. Agents first. More coming.
                         </p>
                         <div className="flex gap-4">
                             {[Instagram, Linkedin, Twitter].map((Icon, i) => (
@@ -41,6 +41,7 @@ export default function Footer() {
                         <h4 className="text-white font-black mb-8 uppercase tracking-[0.2em] text-[10px] text-brand-orange">The Engine</h4>
                         <ul className="space-y-4">
                             {[
+                                { name: 'AI Agents Fleet', href: '/ai-agents' },
                                 { name: 'AI SEO & AEO', href: '/services/ai-seo' },
                                 { name: 'WhatsApp Automation', href: '/services/whatsapp-automation' },
                                 { name: 'Performance Marketing', href: '/services/google-ads' },

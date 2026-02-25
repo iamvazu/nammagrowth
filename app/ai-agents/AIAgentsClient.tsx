@@ -251,9 +251,9 @@ export default function AIAgentsClient() {
                         {/* Agent 2: SEO AGENT */}
                         <motion.div
                             whileHover={{ y: -10 }}
-                            className="glass-dark rounded-[3rem] p-10 border border-white/5 flex flex-col h-full relative opacity-80"
+                            className="glass-dark rounded-[3rem] p-10 border border-white/5 flex flex-col h-full relative"
                         >
-                            <div className="absolute top-8 right-8 px-4 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-[10px] font-black uppercase tracking-widest">Beta (Waitlist)</div>
+                            <div className="absolute top-8 right-8 px-4 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-500 text-[10px] font-black uppercase tracking-widest">Available Now</div>
                             <Search className="w-16 h-16 text-brand-indigo mb-8" />
                             <h3 className="text-3xl font-black mb-6">SEO AGENT</h3>
 
@@ -290,9 +290,9 @@ export default function AIAgentsClient() {
                         {/* Agent 3: CHAT AGENT */}
                         <motion.div
                             whileHover={{ y: -10 }}
-                            className="glass-dark rounded-[3rem] p-10 border border-white/5 flex flex-col h-full relative opacity-80"
+                            className="glass-dark rounded-[3rem] p-10 border border-white/5 flex flex-col h-full relative"
                         >
-                            <div className="absolute top-8 right-8 px-4 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-[10px] font-black uppercase tracking-widest">Beta (Waitlist)</div>
+                            <div className="absolute top-8 right-8 px-4 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-500 text-[10px] font-black uppercase tracking-widest">Available Now</div>
                             <MessageSquare className="w-16 h-16 text-brand-gold mb-8" />
                             <h3 className="text-3xl font-black mb-6">CHAT AGENT</h3>
 
@@ -608,16 +608,15 @@ export default function AIAgentsClient() {
                             <Link href="#contact" className="px-8 py-4 rounded-full font-bold glass bg-white/5 hover:bg-white/10 transition-all border border-white/10 text-center group-hover:bg-white/20">Talk to Sales</Link>
                         </div>
 
-                        {/* Agent Fleet */}
-                        <div className="md:col-span-3 mt-12 glass-dark rounded-[3rem] p-10 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 bg-gradient-to-r from-bg-deep to-brand-indigo/10">
+                        {/* Open Claw Build */}
+                        <div className="md:col-span-3 mt-12 glass-dark rounded-[3rem] p-10 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 bg-gradient-to-r from-bg-deep to-brand-orange/5">
                             <div className="max-w-xl text-left">
-                                <div className="px-4 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-[10px] font-black uppercase tracking-widest self-start mb-4 inline-block">Coming Soon</div>
-                                <h3 className="text-3xl font-black mb-4">AGENT FLEET</h3>
-                                <p className="text-slate-400 text-sm">Ads Agent + SEO Agent + Chat Agent working together with shared intelligence across your entire funnel. Unified dashboard + dedicated success manager.</p>
+                                <div className="px-4 py-1 rounded-full bg-brand-indigo/10 border border-brand-indigo/20 text-brand-indigo text-[10px] font-black uppercase tracking-widest self-start mb-4 inline-block">Custom Implementations</div>
+                                <h3 className="text-3xl font-black mb-4">OPEN CLAW BUILDS</h3>
+                                <p className="text-slate-400 text-sm italic">Custom AI agents for any repetitive business workflow. Finance, HR, Operations, or Sales—if it repeats, we build an agent for it.</p>
                             </div>
                             <div className="text-center md:text-right">
-                                <div className="text-white font-black text-2xl mb-4">Custom Pricing</div>
-                                <Link href="#contact" className="btn-premium inline-block">Talk to Sales First</Link>
+                                <Link href="/solutions/open-claw-builds" className="btn-premium inline-block">Build Custom Agent</Link>
                             </div>
                         </div>
                     </div>

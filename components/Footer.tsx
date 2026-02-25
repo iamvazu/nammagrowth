@@ -41,11 +41,11 @@ export default function Footer() {
                         <h4 className="text-white font-black mb-8 uppercase tracking-[0.2em] text-[10px] text-brand-orange">The Engine</h4>
                         <ul className="space-y-4">
                             {[
-                                { name: 'AI Agents Fleet', href: '/ai-agents' },
-                                { name: 'AI SEO & AEO', href: '/services/ai-seo' },
-                                { name: 'WhatsApp Automation', href: '/services/whatsapp-automation' },
-                                { name: 'Performance Marketing', href: '/services/google-ads' },
-                                { name: 'Programmatic SEO', href: '/services/pseo' }
+                                { name: 'Ads Agent', href: '/ai-agents#ads' },
+                                { name: 'SEO Agent (PSEO+AEO+GEO)', href: '/services/ai-seo' },
+                                { name: 'Chat Agent', href: '/ai-agents#chat' },
+                                { name: 'Open Claw Custom Builds', href: '/solutions/open-claw-builds' },
+                                { name: 'AI Solutions Suite', href: '/services' }
                             ].map((link) => (
                                 <li key={link.name}>
                                     <Link href={link.href} className="text-slate-500 hover:text-white text-sm transition-colors flex items-center gap-2 group">
@@ -62,11 +62,11 @@ export default function Footer() {
                         <h4 className="text-white font-black mb-8 uppercase tracking-[0.2em] text-[10px] text-brand-indigo">Resources</h4>
                         <ul className="space-y-4">
                             {[
-                                { name: 'Case Stories', href: '/case-studies' },
+                                { name: 'Results / Case Studies', href: '/case-studies' },
+                                { name: 'Agent Performance', href: '/case-studies' },
                                 { name: 'Growth Blog', href: '/blog' },
-                                { name: 'Free Growth Audit', href: '/book-call' },
-                                { name: 'SEO Discovery', href: '/discovery/seo' },
-                                { name: 'Web Discovery', href: '/discovery/web-design' }
+                                { name: 'Pricing', href: '/pricing' },
+                                { name: 'Contact Us', href: '/contact' }
                             ].map((link) => (
                                 <li key={link.name}>
                                     <Link href={link.href} className="text-slate-500 hover:text-white text-sm transition-colors">

@@ -18,55 +18,58 @@ export default function Navbar() {
 
     const navLinks = [
         {
-            name: 'Services',
+            name: 'AI Agents',
+            href: '/ai-agents',
+            dropdown: [
+                { name: 'Ads Agent', href: '/ai-agents#ads', status: 'Available Now' },
+                { name: 'SEO Agent', href: '/services/ai-seo', status: 'Available Now' },
+                { name: 'Chat Agent', href: '/ai-agents#chat', status: 'Available Now' },
+                { name: 'Content Agent', href: '/ai-agents#content', status: 'Waitlist' },
+                { name: 'Open Claw Builds', href: '/solutions/open-claw-builds', status: 'Custom' },
+                { name: 'View All Agents →', href: '/ai-agents', isBold: true }
+            ]
+        },
+        {
+            name: 'Solutions',
             href: '/services',
             isMega: true,
             categories: [
                 {
-                    title: "AI-Powered Marketing",
+                    title: "AI SEO Suite",
                     links: [
-                        { name: "AI SEO & AEO", href: "/services/ai-seo" },
-                        { name: "AI Content Generation", href: "/services/ai-content" },
-                        { name: "WhatsApp Automation", href: "/services/whatsapp-automation" },
-                        { name: "Predictive Analytics", href: "/services/analytics" }
+                        { name: "PSEO + AEO + GEO", href: "/services/ai-seo" },
+                        { name: "Programmatic SEO", href: "/services/pseo" },
+                        { name: "Answer Engine Opt.", href: "/services/ai-seo" },
+                        { name: "Generative Engine Opt.", href: "/services/ai-seo" }
                     ]
                 },
                 {
                     title: "Performance Ads",
                     links: [
-                        { name: "Google & Search Ads", href: "/services/google-ads" },
-                        { name: "Meta & Social Ads", href: "/services/social-ads" },
-                        { name: "LinkedIn B2B", href: "/services/linkedin-ads" },
-                        { name: "Programmatic Ads", href: "/services/programmatic-ads" }
-                    ]
-                },
-                {
-                    title: "Organic Growth",
-                    links: [
-                        { name: "PSEO Engine", href: "/services/pseo" },
-                        { name: "Local SEO Mastery", href: "/services/local-seo" },
-                        { name: "Content Strategy", href: "/services/content-marketing" },
-                        { name: "Social Management", href: "/services/social-media" }
+                        { name: "Google & Meta Ads", href: "/services/google-ads" },
+                        { name: "Search Ads Mastery", href: "/services/google-ads" },
+                        { name: "Social Growth Engine", href: "/services/meta-ads" },
+                        { name: "Programmatic Ads", href: "/services/google-ads" }
                     ]
                 },
                 {
                     title: "Web & Creative",
                     links: [
-                        { name: "Web Development", href: "/services/web-development" },
-                        { name: "E-commerce Solutions", href: "/services/ecommerce" },
-                        { name: "Video Production", href: "/services/video" },
-                        { name: "CRO Optimization", href: "/services/cro" }
+                        { name: "Web Development", href: "/services/web-dev" },
+                        { name: "E-commerce Engine", href: "/services/ecommerce" },
+                        { name: "Video ROI", href: "/services/video-ads" },
+                        { name: "Design & Branding", href: "/services/brand-strategy" }
+                    ]
+                },
+                {
+                    title: "Open Claw Builds",
+                    links: [
+                        { name: "Custom Agent Dev", href: "/solutions/open-claw-builds" },
+                        { name: "Workflow Automation", href: "/solutions/open-claw-builds" },
+                        { name: "Finance & HR Agents", href: "/solutions/open-claw-builds" },
+                        { name: "View All Solutions →", href: "/services" }
                     ]
                 }
-            ]
-        },
-        {
-            name: 'Discovery',
-            href: '#',
-            dropdown: [
-                { name: 'SEO Discovery Form', href: '/discovery/seo' },
-                { name: 'Web Design Discovery Form', href: '/discovery/web-design' },
-                { name: 'Paid Advertising Discovery Form', href: '/discovery/ads' }
             ]
         },
         {
@@ -77,11 +80,21 @@ export default function Navbar() {
                 { name: 'Real Estate', href: '/industries/real-estate' },
                 { name: 'Healthcare', href: '/industries/healthcare' },
                 { name: 'D2C E-commerce', href: '/industries/ecommerce' },
+                { name: 'View All Industries →', href: '/industries' }
             ]
         },
-        { name: 'AI Agents', href: '/ai-agents' },
-        { name: 'Case Stories', href: '/case-studies' },
-        { name: 'Blog', href: '/blog' },
+        { name: 'Results', href: '/case-studies' },
+        { name: 'Pricing', href: '/pricing' },
+        {
+            name: 'Insights',
+            href: '/blog',
+            dropdown: [
+                { name: 'Blog', href: '/blog' },
+                { name: 'Resources', href: '/resources' },
+                { name: 'Newsletter', href: '#newsletter' }
+            ]
+        },
+        { name: 'Contact', href: '/contact' },
     ]
 
     return (
@@ -130,9 +143,14 @@ export default function Navbar() {
                                                         <Link
                                                             key={item.name}
                                                             href={item.href}
-                                                            className="px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all"
+                                                            className={`px-4 py-2 text-sm flex items-center justify-between group/item rounded-xl transition-all ${item.isBold ? 'text-white font-bold' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
                                                         >
-                                                            {item.name}
+                                                            <span>{item.name}</span>
+                                                            {item.status && (
+                                                                <span className="text-[8px] font-black uppercase tracking-tighter px-1.5 py-0.5 rounded bg-brand-indigo/10 text-brand-indigo border border-brand-indigo/20">
+                                                                    {item.status}
+                                                                </span>
+                                                            )}
                                                         </Link>
                                                     ))}
                                                 </div>
@@ -176,8 +194,8 @@ export default function Navbar() {
                                 )}
                             </div>
                         ))}
-                        <Link href="/book-call" className="px-6 py-2.5 rounded-full glass border border-white/10 text-sm font-bold hover:bg-white/10 transition-all text-white">
-                            Book a Call
+                        <Link href="/ai-agents" className="px-8 py-2.5 rounded-full btn-premium text-sm font-bold shadow-lg shadow-brand-indigo/20">
+                            Deploy an Agent
                         </Link>
                     </div>
 
@@ -212,11 +230,11 @@ export default function Navbar() {
                                 </Link>
                             ))}
                             <Link
-                                href="/book-call"
+                                href="/ai-agents"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="btn-premium w-full text-center"
                             >
-                                Get Free Audit
+                                Deploy an Agent
                             </Link>
                         </div>
                     </motion.div>
